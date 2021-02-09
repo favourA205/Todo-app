@@ -1,0 +1,15 @@
+.app {
+  background: url(C:\Users\User\Desktop\Todo\todo-app\src\daniel-sessler-p_3j4nZpZw4-unsplash.jpg)
+    no-repeat;
+  height: 100vh;
+  background-size: cover;
+}
+
+.app__overlay {
+  position: absolute;
+  background: #111;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  opacity: 0.5;
+}
