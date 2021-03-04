@@ -65,6 +65,7 @@
   margin: 0 3px;
 }
 
+/* Media Queries */
 @media (max-width: 800px) {
   .todos__content {
     padding: 40px 100px;
@@ -83,8 +84,31 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 500px) {
   .todos__content {
-    padding: 40px 60px;
+    padding: 40px 40px;
+  }
+}
+
+@media (max-width: 380px) {
+  .todos__content {
+    padding: 40px 18px;
+  }
+}
+
+@media (max-width: 325px) {
+  .todos__content {
+    padding: 40px 15px;
+  }
+
+  .todos__content .todos__form .todos__input {
+    padding: 10px 19px 10px 9px;
+    border: none;
+    border-radius: 6px;
+  }
+
+  .todos__content .todos__forms .todos__add__btn {
+    margin: 0 4px;
+    padding: 0 15px;
   }
 }
