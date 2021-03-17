@@ -69,18 +69,6 @@
   }
 }
 
-/* @media (max-width: 560px) {
-  .todo__title {
-    max-width: 15vh;
-  }
-}
-
-@media (max-width: 460px) {
-  .todo__title {
-    max-width: 13vh;
-  }
-} */
-
 @media (max-width: 325px) {
   .todo .todo__buttons {
     margin: 5px 10px;

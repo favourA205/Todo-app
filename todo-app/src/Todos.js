@@ -38,6 +38,7 @@ function newTodo(name){
 function Todos({title}) {
     const [todos, dispatch] = useReducer(reducer, [])
     const [name, setName] = useState('')
+    
 
     function handleSubmit(e){
         e.preventDefault()
@@ -63,7 +64,7 @@ function Todos({title}) {
                     </button>
 
                 </div>
-                <div className="todos__todo">
+                <div className="todos__todo" data-simplebar>
                     {todos.map(todo =>{
                         return <Todo Key={todo.id} todo={todo} dispatch={dispatch} /> 
                     })}

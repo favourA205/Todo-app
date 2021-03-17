@@ -45,6 +45,7 @@
   padding: 10px 30px;
   border: none;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .todos__content .todos__forms .todos__add__btn {
