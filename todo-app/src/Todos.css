@@ -48,7 +48,7 @@
   cursor: pointer;
 }
 
-.todos__content .todos__forms .todos__add__btn {
+.todos__content .todos__forms .todos__add__btn:enabled {
   border: none;
   border-radius: 4px;
   background: orange;
@@ -58,7 +58,19 @@
   transition: all 0.1s ease;
   cursor: pointer;
 }
-.todos__content .todos__forms .todos__add__btn:hover {
+
+.todos__content .todos__forms .todos__add__btn:disabled {
+  border: none;
+  border-radius: 4px;
+  background: whitesmoke;
+  color: #112;
+  margin: 0 5px;
+  padding: 0 25px;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.todos__content .todos__forms .todos__add__btn:enabled:hover {
   border: none;
   border-radius: 4px;
   background: #112;

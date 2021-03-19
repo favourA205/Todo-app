@@ -38,7 +38,18 @@ function newTodo(name){
 function Todos({title}) {
     const [todos, dispatch] = useReducer(reducer, [])
     const [name, setName] = useState('')
-    
+    const [disabled, setDisabled] = useState(true)
+
+    function handleChange(e){
+        setName(e.target.value)
+        if (e.target.value.length >= 6  ){
+            setDisabled(false)
+            console.log('enabled')
+        } else{
+            setDisabled(true)
+            console.log('disabled')
+        }
+    }
 
     function handleSubmit(e){
         e.preventDefault()
@@ -56,17 +67,17 @@ function Todos({title}) {
                 <h2>My todo app</h2>
                 <div className="todos__forms">
                     <form className="todos__form" onSubmit={handleSubmit} >
-                        <input  className="todos__input" value={name} placeholder="Add todo" onChange={e => setName(e.target.value)} />
+                        <input  className="todos__input" value={name} placeholder="Add todo" onChange={handleChange} />
                     </form>
 
-                    <button className='todos__add__btn' onClick={handleSubmit}>
+                    <button className='todos__add__btn' onClick={handleSubmit} disabled={disabled}>
                         Create
                     </button>
 
                 </div>
-                <div className="todos__todo" data-simplebar>
+                <div className="todos__todo">
                     {todos.map(todo =>{
-                        return <Todo Key={todo.id} todo={todo} dispatch={dispatch} /> 
+                        return <Todo Key={todo.id} id={todo.id} todo={todo} dispatch={dispatch} /> 
                     })}
                 </div>
  
