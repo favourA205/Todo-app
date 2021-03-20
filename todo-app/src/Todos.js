@@ -66,7 +66,7 @@ function Todos({title}) {
             <div className='todos__content'>
                 <h2>My todo app</h2>
                 <div className="todos__forms">
-                    <form className="todos__form" onSubmit={handleSubmit} >
+                    <form className="todos__form" onSubmit={handleSubmit} disabled={disabled} >
                         <input  className="todos__input" value={name} placeholder="Add todo" onChange={handleChange} />
                     </form>
 
@@ -75,7 +75,7 @@ function Todos({title}) {
                     </button>
 
                 </div>
-                <div className="todos__todo">
+                <div className="todos__todo" data-simplebar>
                     {todos.map(todo =>{
                         return <Todo Key={todo.id} id={todo.id} todo={todo} dispatch={dispatch} /> 
                     })}
