@@ -1,6 +1,6 @@
-import React, { useState, useReducer } from 'react'
-import './Todos.css'
-import Todo from './Todo'
+import React, { useState, useReducer } from 'react';
+import './Todos.css';
+import Todo from './Todo';
 
 
 export const ACTIONS ={
@@ -35,20 +35,12 @@ function newTodo(name){
     return{id:Date.now(), name:name, complete:false }
 }
 
-function Todos({title}) {
+function Todos() {
     const [todos, dispatch] = useReducer(reducer, [])
     const [name, setName] = useState('')
-    const [disabled, setDisabled] = useState(true)
 
     function handleChange(e){
         setName(e.target.value)
-        if (e.target.value.length >= 6  ){
-            setDisabled(false)
-            console.log('enabled')
-        } else{
-            setDisabled(true)
-            console.log('disabled')
-        }
     }
 
     function handleSubmit(e){
@@ -66,11 +58,11 @@ function Todos({title}) {
             <div className='todos__content'>
                 <h2>My todo app</h2>
                 <div className="todos__forms">
-                    <form className="todos__form" onSubmit={handleSubmit} disabled={disabled} >
+                    <form className="todos__form" onSubmit={handleSubmit} >
                         <input  className="todos__input" value={name} placeholder="Add todo" onChange={handleChange} />
                     </form>
 
-                    <button className='todos__add__btn' onClick={handleSubmit} disabled={disabled}>
+                    <button className='todos__add__btn' onClick={handleSubmit} >
                         Create
                     </button>
 
